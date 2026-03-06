@@ -1,11 +1,11 @@
-a = int(input("Nhập vào số a: "))
-b = int(input("Nhập vào số b: "))
-c = int(input("Nhập vào số c: "))
-def compare(a,b,c):
-    if a < b and a < c:
-        return a
-    elif b < a and b < c:
-        return b
-    elif c < a and c < b:
-        return c
-print(f"Số nhỏ nhất: {compare(a,b,c)}")
+numb = int(input("Nhập vào số nguyên bất kỳ: "))
+
+def snt(numb):
+   for i in range (1,numb+1):
+         count = 0
+         for j in range (1,i+1):
+            if i % j == 0:
+               count += 1
+         if count == 2:
+            print (i)
+snt(numb)

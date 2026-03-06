@@ -1,6 +1,12 @@
-import converter as cv
+import password_utils as pa
+pw = input("Nhập password: ")
 
-print(f"Chuyển đổi sang km: {cv.km_to_miles(10)}")
-print(f"Chuyển đổi sang độ f: {cv.celsius_to_fahrenheit(40)}")
-print(f"Chuyển đổi sang m: {cv.miles_to_km(cv.km_to_miles(10))}")
-print(f"Chuyển đổi sang độ c: {cv.fahrenheit_to_celsius(cv.celsius_to_fahrenheit(40))}")
+while pa.is_long_enough(pw) == False :
+    pw = input("Không đủ điều kiện, nhập lại password: ")
+
+if pa.is_strong_password(pw) == True: 
+    print("Mật khẩu mạnh")
+else:
+    print("Mật khẩu yếu")
+
+
