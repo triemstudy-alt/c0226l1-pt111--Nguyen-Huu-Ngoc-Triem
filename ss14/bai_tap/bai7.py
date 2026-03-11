@@ -6,5 +6,11 @@ students = (
 for i in students:
     print(i)
     
-for i in range(len(students)):
-    st = students(i)
+for name, point in students:
+    print(name, point)
+
+max = 0
+for name, point in students:
+    if point >= max:
+        max = point
+print(max)
