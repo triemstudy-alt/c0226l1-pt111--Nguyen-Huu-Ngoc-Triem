@@ -45,15 +45,6 @@ label.grid(row=8, column=0)
 ctr = tk.Entry(root)
 ctr.grid(row=8, column=1)
 
-value1 = ""
-value2 = ""
-value3 = ""
-value4 = ""
-value5 = ""
-value6 = ""
-value7 = "" 
-value8 = ""
-
 def getInfor():
     value1 = fname.get()
     value2 = lname.get()
@@ -66,7 +57,17 @@ def getInfor():
     mb.showinfo("Full information submit",
                  f"First name: {value1}\nLast name: {value2}\nAddress1: {value3}\nAddress2: {value4}\nProvince: {value5}\nCity: {value6}\nPostal Code: {value7}\nCountry: {value8} ")
 
-btn1 = tk.Button(root, text="Clear")
+def clearData(event = None):
+    fname.delete(0, tk.END)
+    lname.delete(0, tk.END)
+    adr1.delete(0, tk.END)
+    adr2.delete(0, tk.END)
+    city.delete(0, tk.END)
+    prv.delete(0, tk.END)
+    pc.delete(0, tk.END)
+    ctr.delete(0, tk.END)
+
+btn1 = tk.Button(root, text="Clear", command= clearData)
 btn1.grid(row=9, column=2)
 
 btn2 = tk.Button(root, text="Submit", command= getInfor)
