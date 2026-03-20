@@ -57,7 +57,7 @@ def getInfor():
     mb.showinfo("Full information submit",
                  f"First name: {value1}\nLast name: {value2}\nAddress1: {value3}\nAddress2: {value4}\nProvince: {value5}\nCity: {value6}\nPostal Code: {value7}\nCountry: {value8} ")
 
-def clearData(event = None):
+def clearData():
     fname.delete(0, tk.END)
     lname.delete(0, tk.END)
     adr1.delete(0, tk.END)
