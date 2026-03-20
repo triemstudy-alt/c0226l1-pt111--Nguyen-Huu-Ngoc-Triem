@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox as mb
 
 root = tk.Tk()
 root.title("Address_Entry_Form")
@@ -16,8 +17,8 @@ lname.grid(row=2, column=1)
 
 label = tk.Label(root, text="Address line 1")
 label.grid(row=3, column=0)
-adr = tk.Entry(root)
-adr.grid(row=3, column=1)
+adr1 = tk.Entry(root)
+adr1.grid(row=3, column=1)
 
 label = tk.Label(root, text="Address line 2")
 label.grid(row=4, column=0)
@@ -44,10 +45,31 @@ label.grid(row=8, column=0)
 ctr = tk.Entry(root)
 ctr.grid(row=8, column=1)
 
+value1 = ""
+value2 = ""
+value3 = ""
+value4 = ""
+value5 = ""
+value6 = ""
+value7 = "" 
+value8 = ""
+
+def getInfor():
+    value1 = fname.get()
+    value2 = lname.get()
+    value3 = adr1.get()
+    value4 = adr2.get()
+    value5 = city.get()
+    value6 = prv.get()
+    value7 = pc.get()
+    value8 = ctr.get()
+    mb.showinfo("Full information submit",
+                 f"First name: {value1}\nLast name: {value2}\nAddress1: {value3}\nAddress2: {value4}\nProvince: {value5}\nCity: {value6}\nPostal Code: {value7}\nCountry: {value8} ")
+
 btn1 = tk.Button(root, text="Clear")
 btn1.grid(row=9, column=2)
 
-btn2 = tk.Button(root, text="Submit")
+btn2 = tk.Button(root, text="Submit", command= getInfor)
 btn2.grid(row=9, column=3)
 
 root.mainloop() 
