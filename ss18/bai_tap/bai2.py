@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox as mb
 
 root = tk.Tk()
 root.title("Form Đăng ký Khuyến mãi")
@@ -51,13 +52,29 @@ def submit():
     day = day_cb.get()
     month = month_cb.get()
     year = year_cb.get()
-    with open ("khuyenmai.csv", "w") as f:
+    with open ("khuyenmai.csv", "a") as f:
         f.write(f"Name: {name}, Phone: {phone}, Email: {email}, Day: {day}, Month: {month}, Year: {year}\n")
 
+def clear():
+    name = name_entry.delete(0, tk.END)
+    phone = phone_entry.delete(0, tk.END)
+    email = email_entry.delete(0, tk.END)
+    day = day_cb.delete(0, tk.END)
+    month = month_cb.delete(0, tk.END)
+    year = year_cb.delete(0, tk.END)
+
+def notice():
+    mb.showinfo("Register data successfully")
+
+def register():
+    submit()
+    clear()
+    notice()
+    
 btn = tk.Button(
     root,
     text="Đăng ký nhận khuyến mãi",
-    command=submit,
+    command=register,
     bg="gray",
     fg="white",
     width=25
