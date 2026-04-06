@@ -180,7 +180,7 @@ def edit_student():
                 data = list(reader)
             for i in range(len(data)):
                 if data[i][0] == values[0]: # Tìm dòng có mã học viên cũ để cập nhật
-                    data[i] = [ma, ten, lop, email, ngaysinh]
+                    data[i] = [ma, ten, lop, email, ngaysinh] #mảng 2 chiều data
                     break
             with open("data.csv", "w", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
